@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/styles/index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/images/scramble.svg" />
+    <title>Word scramble game</title>
+</head>
+
+<body>
+    <div id="sidenav-open-btn">THEMES</div>
+    <div id="sidenav">
+      <p id="menu-web-series">Web Series</p>
+      <p id="menu-fruits-and-vegetables">Fruits and vegetables</p>
+      <p id="menu-science">Science</p>
+    </div>
+
+    <div class="title">
+        <div id="game-name">
+            <p class="box">W</p>
+            <p class="box">o</p>
+            <p class="box">R</p>
+            <p class="box">d</p>
+            -&nbsp;
+            <h3>Scramble Game</h3>
+            <div class="user">Hi, Soliton</div>
+        </div>       
+    </div>
+
+    <div id="game-body">
+        <div class="game-ques">Find the Web-Series:</div>
+        <div class="navigation" id="navigation"></div>       
+
+        <div id="letter-grab-area" ondragover="onDragOver(event);" ondrop="onDropInContainer(event, this);"></div>
+
+        <div id="letter-drop-area"></div>
+        <div class="buttons">
+            <button id="reset" title="click to reset the word">&#9850</button>
+            <button id="next" title="click to move to next question">&#10153</button>
+        </div>
+        <div class="timer" id="timer">:</div>
+        <div id="hint">💡</div>
+    </div>
+
+    <div>
+        <div class="lb-tag">LEADERBOARD</div>
+        <div class="leaderboard" id="leaderboard"></div>
+    </div>
+
+    <div id="theme-popup">
+        <header>Select Theme:</header>
+        <p id="web-series">Web Series</p>
+        <p id="fruits-and-vegetables">Fruits and vegetables</p>
+        <p id="science">Science</p>
+        <button id="theme-submit-btn" disabled>OK</button>
+    </div>
+
+    <form id="username-popup">
+        <header>Tell us your name😄</header>
+
+        <input type="text" id="username" placeholder="Username" pattern="^[a-zA-Z0-9 ]+$" required autocomplete="off" />
+        <button type="submit" id="username-close-btn">OK</button>
+    </form>
+    <script defer src="./public/scripts/main.js" type="module"></script>
+    <script defer src="./public/scripts/theme_popup.js" type="module"></script>
+    <script defer src="./public/scripts/drag_drop.js" type="module"></script>
+    <script defer src="./public/scripts/leaderboard.js" type="module"></script>
+    <script defer src="./public/scripts/timer.js" type="module"></script>
+    <script defer src="./public/scripts/displayQues.js" type="module"></script>
+</body>
+
+</html>
