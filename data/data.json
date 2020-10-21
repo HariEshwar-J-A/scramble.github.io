@@ -1,0 +1,128 @@
+{
+  "web-series": [
+    {
+      "ques": "urotan",
+      "ans": "naruto",
+      "image": "../assets/images/web-series-images/kakashi-naruto.png",
+      "hint": "A ninja anime"
+    },
+    {
+      "ques": "sdfneir",
+      "ans": "friends",
+      "image": "../assets/images/web-series-images/friends.png",
+      "hint": "I'll be there for you!"
+    },
+    {
+      "ques": "aofehonegrsmt",
+      "ans": "gameofthrones",
+      "image": "../assets/images/web-series-images/got.png",
+      "hint": "A lanister always pays his debts"
+    },
+    {
+      "ques": "ienrunmhtd",
+      "ans": "mindhunter",
+      "image": "../assets/images/web-series-images/mindhunter.png",
+      "hint": "When we know who the criminal is, we can know hat set him off"
+    },
+    {
+      "ques": "tsius",
+      "ans": "suits",
+      "image": "../assets/images/web-series-images/suits.png",
+      "hint": "I don't play the odds I play the man"
+    },
+    {
+      "ques": "krnbripeoas",
+      "ans": "prisonbreak",
+      "image": "../assets/images/web-series-images/prisonbreak.png",
+      "hint": "We are captives of our own identities, living in prisons of our own creation"
+    },
+    {
+      "ques": "abbdraknegi",
+      "ans": "breakingbad",
+      "image": "../assets/images/web-series-images/breakingbad.png",
+      "hint": "I'm the one who knocks!"
+    }
+  ],
+  "science": [
+    {
+      "ques": "hbakcleol",
+      "ans": "blackhole",
+      "image": "../assets/images/science-images/blackhole.png",
+      "hint": "Region of spacetime where gravity is so strong"
+    },
+    {
+      "ques": "laubne",
+      "ans": "nebula",
+      "image": "../assets/images/science-images/nebula.png",
+      "hint": "Giant cloud of dust and gas in space"
+    },
+    {
+      "ques": "trunas",
+      "ans": "saturn",
+      "image": "../assets/images/science-images/saturn.png",
+      "hint": "A planet in solar system"
+    },
+    {
+      "ques": "sndtcromucei",
+      "ans": "semiconductor",
+      "image": "../assets/images/science-images/semiconductor.png",
+      "hint": "A material that can either allow to conduct current or not"
+    },
+    {
+      "ques": "grbocy",
+      "ans": "cyborg",
+      "image": "../assets/images/science-images/cyborg.png",
+      "hint": "A being with both organic and biomechatronic body parts"
+    },
+    {
+      "ques": "opohrehly",
+      "ans": "hyperloop",
+      "image": "../assets/images/science-images/hyperloop.png",
+      "hint": "A sealed tube with low air pressure through which a pod may travel substantially free of air resistance or friction"
+    }
+  ],
+  "fruits-and-vegetables": [
+    {
+      "ques": "rtiudgranof",
+      "ans": "dragonfruit",
+      "image": "../assets/images/fruit-veg-images/dragon.png",
+      "hint": "Fiery fruit"
+    },
+    {
+      "ques": "ecyelh",
+      "ans": "lychee",
+      "image": "../assets/images/fruit-veg-images/lychee.png",
+      "hint": "White fleshed fruit"
+    },
+    {
+      "ques": "colricob",
+      "ans": "broccoli",
+      "image": "../assets/images/fruit-veg-images/broccoli.png",
+      "hint": "Cauliflower family"
+    },
+    {
+      "ques": "posata",
+      "ans": "sapota",
+      "image": "../assets/images/fruit-veg-images/sapota.png",
+      "hint": "Fruit with earthy brown flesh"
+    },
+    {
+      "ques": "uasagaprs",
+      "ans": "asparagus",
+      "image": "../assets/images/fruit-veg-images/asparagus.png",
+      "hint": "Green stick vegetable"
+    },
+    {
+      "ques": "cizicunh",
+      "ans": "zucchini",
+      "image": "../assets/images/fruit-veg-images/zucchini.png",
+      "hint": "Used in pickles"
+    },
+    {
+      "ques": "eorhitcka",
+      "ans": "artichoke",
+      "image": "../assets/images/fruit-veg-images/artichoke.png",
+      "hint": "Plant with a heart"
+    }
+  ]
+}

@@ -1,0 +1,568 @@
+* {
+    margin: 0px;
+}
+
+body {
+    position: relative;
+    top: 75px;
+    background: url("../../assets/images/wood-texture-bg.jpg");
+    overflow-x: hidden;
+    font-family: "Lemonada", cursive;
+}
+
+#sidenav {
+    box-sizing: border-box;
+    z-index: 9;
+    display: block;
+    margin-left: -250px;
+    height: 72vh;
+    width: 250px;
+    box-shadow: 0 0 10px 10px #000;
+    border-radius: 1rem;
+    position: absolute;
+    left: 0px;
+    top: max(13vh, 120px);
+    transition: all 0.5s ease-in-out;
+    padding: 1rem;
+    background: #311307;
+    animation-direction: normal;
+    color: burlywood;
+}
+
+#sidenav p {
+    padding: 5px;
+    margin: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#sidenav p:hover {
+    color: yellow;
+}
+
+#sidenav-open-btn {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    left: 0px;
+    top: 30vh;
+    background: burlywood;
+    width: 25px;
+    border-radius: 0.5rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-align: center;
+    z-index: 10;
+    border: 2px solid #000;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes view-menu {
+    0% {
+        display: none;
+        opacity: 0;
+        width: 0px;
+    }
+    50% {
+        opacity: 0.5;
+        width: 125px;
+        display: block;
+    }
+    100% {
+        opacity: 1;
+        width: 250px;
+        display: block;
+    }
+}
+
+@keyframes menu-open-btn-jmp {
+    50% {
+        margin-left: 10px;
+    }
+}
+
+@keyframes menu-jmp {
+    0% {
+        margin-left: -250px;
+    }
+    50% {
+        margin-left: -240px;
+    }
+    100% {
+        margin-left: -250px;
+    }
+}
+
+.title {
+    display: flex;
+    position: fixed;
+    height: 130px;
+    top: 0px;
+    width: 100vw;
+    letter-spacing: 0.2rem;
+    align-items: center;
+    justify-content: center;
+    background: #311307;
+    transition: 0.5s ease-in-out;
+    z-index: 3;
+    box-shadow: 0px 10px 10px black;
+}
+
+#game-name {
+    font-size: xx-large;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 900px;
+    color: #ff0;
+    color: -webkit-linear-gradient(#eee, #333);
+}
+
+h3 {
+    font-size: 36px;
+    background: -webkit-linear-gradient(#ff0, #f00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.box {
+    border: 1px solid #000;
+    margin: 1px;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    background-color: burlywood;
+    color: #000;
+}
+
+@keyframes word-scaleup1 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes word-scaleup2 {
+    12.5% {
+        transform: scale(1);
+    }
+    62.5% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes word-scaleup3 {
+    25% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes word-scaleup4 {
+    37.5% {
+        transform: scale(1);
+    }
+    87.5% {
+        transform: scale(0.8);
+    }
+}
+
+.box:nth-child(1) {
+    animation: word-scaleup1 1.2s infinite ease-in-out;
+}
+
+.box:nth-child(2) {
+    animation: word-scaleup2 1.2s infinite ease-in-out;
+}
+
+.box:nth-child(3) {
+    animation: word-scaleup3 1.2s infinite ease-in-out;
+}
+
+.box:nth-child(4) {
+    animation: word-scaleup4 1.2s infinite ease-in-out;
+}
+
+.user {
+    position: relative;
+    left: 20vw;
+    top: 25px;
+    /* color: #000; */
+    width: 150px;
+    height: fit-content;
+    text-align: center;
+    /* background-color: burlywood; */
+    color: burlywood;
+    border-radius: 1rem;
+    padding: 0 5px 0 5px;
+    /* box-shadow: 0 0 10px 10px #000; */
+    font-size: 1.1rem;
+}
+
+@keyframes aid-board {
+    0% {
+        width: 80vw;
+    }
+    50% {
+        width: 70vw;
+    }
+    100% {
+        width: 60vw;
+    }
+}
+
+#game-body {
+    filter: blur(8px);
+    width: 80vw;
+    height: 75vh;
+    position: absolute;
+    top: max(13vh, 120px);
+    margin-left: 10%;
+    background-color: #311307;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px 10px #000 inset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* animation: aid-board 0.5s linear 0s 1 forwards; */
+    /* animation-direction: reverse; */
+    transition: all 0.5s ease-in-out;
+}
+
+.game-ques {
+    position: absolute;
+    top: 20px;
+    left: 15%;
+    text-align: center;
+    font-size: x-large;
+    width: 40vw;
+    color: #fff;
+}
+
+.game-hint img {
+    width: 150px;
+    position: absolute;
+    right: 0;
+    top: 100px;
+}
+
+.theme-selector {
+    display: flex;
+    flex-direction: column;
+}
+
+.pref {
+    border: 2px solid #000;
+    border-radius: 1rem;
+    text-align: center;
+    color: #f00;
+}
+
+.pref:hover {
+    transform: scale();
+}
+
+#letter-grab-area {
+    position: absolute;
+    top: 130px;
+    left: 10vw;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border: 2px solid #ffffff;
+    width: 500px;
+    margin: 10px;
+    min-height: 4.5rem;
+    padding: 10px;
+    font-family: "Source Code Pro", monospace;
+}
+
+#letter-drop-area {
+    position: absolute;
+    top: 300px;
+    left: 10vw;
+    width: 55vw;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin: 5px;
+    font-family: "Source Code Pro", monospace;
+}
+
+.grab-letter {
+    background-color: burlywood;
+    box-shadow: 5px 5px 10px 5px #000000;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: fit-content;
+    min-width: 3rem;
+    border: 2px solid #ffffff;
+    margin: 5px;
+    padding: 10px;
+}
+
+@keyframes view-tag {
+    0% {
+        /* display: none; */
+        opacity: 0;
+        margin-right: 0px;
+    }
+    50% {
+        opacity: 0.5;
+        margin-right: 175px;
+        /* display: block; */
+    }
+    100% {
+        opacity: 1;
+        margin-right: 350px;
+        /* display: block; */
+    }
+}
+
+@keyframes view-board {
+    0% {
+        display: none;
+        opacity: 0;
+        width: 0px;
+    }
+    50% {
+        opacity: 0.5;
+        width: 175px;
+        display: block;
+    }
+    100% {
+        opacity: 1;
+        width: 350px;
+        display: block;
+    }
+}
+
+.lb-tag {
+    cursor: pointer;
+    position: fixed;
+    right: 0px;
+    top: 30vh;
+    background: burlywood;
+    width: 25px;
+    border-radius: 0.5rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-align: center;
+    animation: view-tag 0.5s linear 0s 1 reverse;
+    z-index: 10;
+    border: 2px solid #000;
+    transition: all 0.5s ease-in-out;
+}
+
+.leaderboard {
+    display: none;
+    background-color: #fff;
+    height: 72vh;
+    width: 350px;
+    box-shadow: 0 0 10px 10px #000;
+    border-radius: 1rem;
+    position: absolute;
+    right: 0px;
+    top: max(13vh, 120px);
+    transition: all 0.5s ease-in-out;
+    padding: 1rem;
+    background: #311307;
+    animation-direction: normal;
+}
+
+#lb-title {
+    color: #fff;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.entry {
+    display: flex;
+    justify-content: space-around;
+    background: burlywood;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#theme-popup {
+    box-sizing: border-box;
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    left: 50vw;
+    top: 50vh;
+    margin-left: -10rem;
+    margin-top: -10rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px;
+    border-radius: 5px;
+    background: #311307;
+    align-items: center;
+    color: burlywood;
+    border: 3px solid burlywood;
+}
+
+#theme-popup p {
+    padding: 5px;
+    color: #311307;
+    background-color: burlywood;
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#theme-popup p:hover {
+    transform: scale(1.2);
+}
+
+#theme-popup button,
+#username-popup button {
+    color: yellow;
+    font-size: medium;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    border-top: 2px solid burlywood;
+    background-image: url("../../assets/images/wood-texture-bg.jpg");
+}
+
+#theme-popup header,
+#username-popup header {
+    color: yellow;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 2px solid burlywood;
+    background-image: url("../../assets/images/wood-texture-bg.jpg");
+}
+
+#username-popup {
+    box-sizing: border-box;
+    position: absolute;
+    width: 20rem;
+    height: 15rem;
+    left: 50vw;
+    top: 50vh;
+    margin-left: -10rem;
+    margin-top: -7.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    border-radius: 5px;
+    background: #311307;
+    align-items: center;
+    justify-content: space-between;
+    color: burlywood;
+    border: 3px solid burlywood;
+}
+
+#username-popup input {
+    background-color: burlywood;
+    border-radius: 10px;
+    padding: 5px;
+    outline: none;
+}
+
+.buttons {
+    display: flex;
+    position: absolute;
+    top: 500px;
+    left: 15vw;
+    width: 20vw;
+    justify-content: space-between;
+}
+
+.buttons button {
+    background-color: burlywood;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.navigation {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    left: 10vw;
+}
+
+.navig-item {
+    margin: 15px;
+    border-radius: 40%;
+    color: whitesmoke;
+    width: 40px;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.685);
+    cursor: pointer;
+}
+
+.timer {
+    position: absolute;
+    top: 75px;
+    right: 10vw;
+    font-size: 1.5rem;
+    color: white;
+    transition: 1s ease-in-out;
+    z-index: 3;
+}
+
+#time-label {
+    position: absolute;
+    top: 25px;
+    right: 10vw;
+    font-size: small;
+    color: white;
+}
+
+.total-score {
+    position: relative;
+    background: burlywood;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    top: calc(50vh - 150px);
+    left: calc(50vw - 18vw);
+    flex-direction: column;
+    width: 35vw;
+    z-index: 1;
+}
+
+.total-score h1 {
+    text-align: center;
+    background: rgb(221, 87, 9);
+    border: 2px solid #000;
+    border-radius: 5px 5px 0 0;
+    color: black;
+}
+
+#hint {
+    font-size: 3rem;
+    position: absolute;
+    top: 60px;
+    right: 18vw;
+    cursor: help;
+    filter: grayscale(100%);
+}
+
+#hint:hover {
+    filter: grayscale(0%);
+}
