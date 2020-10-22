@@ -15,9 +15,9 @@
 <body>
     <div id="sidenav-open-btn">THEMES</div>
     <div id="sidenav">
-      <p id="menu-web-series">Web Series</p>
-      <p id="menu-fruits-and-vegetables">Fruits and vegetables</p>
-      <p id="menu-science">Science</p>
+        <p id="menu-web-series">Web Series</p>
+        <p id="menu-fruits-and-vegetables">Fruits and vegetables</p>
+        <p id="menu-science">Science</p>
     </div>
 
     <div class="title">
@@ -28,23 +28,27 @@
             <p class="box">d</p>
             -&nbsp;
             <h3>Scramble Game</h3>
-            <div class="user">Hi, Soliton</div>
-        </div>       
+        </div>
+        <div class="user">Hi, Soliton</div>
     </div>
 
     <div id="game-body">
-        <div class="game-ques">Find the Web-Series:</div>
-        <div class="navigation" id="navigation"></div>       
-
+        <div class="game-ques">Web-Series</div>
+        <div class="navig-bar">
+            <div class="navigation" id="navigation"></div>
+            <div id="hint">💡</div>
+            <div class="timer" id="timer">:</div>
+        </div>
+        <div class="find-me">Find Me!!</div>
         <div id="letter-grab-area" ondragover="onDragOver(event);" ondrop="onDropInContainer(event, this);"></div>
 
         <div id="letter-drop-area"></div>
         <div class="buttons">
+            <button id="check" title="click to evaluate the given entry">&#9745</button>
             <button id="reset" title="click to reset the word">&#9850</button>
-            <button id="next" title="click to move to next question">&#10153</button>
+            <button id="next" title="click to move to next question">&#10152</button>
         </div>
-        <div class="timer" id="timer">:</div>
-        <div id="hint">💡</div>
+
     </div>
 
     <div>
@@ -57,7 +61,7 @@
         <p id="web-series">Web Series</p>
         <p id="fruits-and-vegetables">Fruits and vegetables</p>
         <p id="science">Science</p>
-        <button id="theme-submit-btn" disabled>OK</button>
+        <button id="theme-submit-btn">OK</button>
     </div>
 
     <form id="username-popup">

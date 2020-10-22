@@ -14,14 +14,14 @@ body {
     box-sizing: border-box;
     z-index: 9;
     display: block;
-    margin-left: -250px;
-    height: 72vh;
+    margin-left: -265px;
+    height: 70vh;
     width: 250px;
     box-shadow: 0 0 10px 10px #000;
     border-radius: 1rem;
-    position: absolute;
+    position: fixed;
     left: 0px;
-    top: max(13vh, 120px);
+    top: 200px;
     transition: all 0.5s ease-in-out;
     padding: 1rem;
     background: #311307;
@@ -45,10 +45,10 @@ body {
     cursor: pointer;
     position: fixed;
     left: 0px;
-    top: 30vh;
+    top: 250px;
     background: burlywood;
     width: 25px;
-    border-radius: 0.5rem;
+    border-radius: 0 0.5rem 0.5rem 0;
     writing-mode: vertical-rl;
     text-orientation: upright;
     text-align: center;
@@ -75,30 +75,12 @@ body {
     }
 }
 
-@keyframes menu-open-btn-jmp {
-    50% {
-        margin-left: 10px;
-    }
-}
-
-@keyframes menu-jmp {
-    0% {
-        margin-left: -250px;
-    }
-    50% {
-        margin-left: -240px;
-    }
-    100% {
-        margin-left: -250px;
-    }
-}
-
 .title {
     display: flex;
     position: fixed;
-    height: 130px;
+    height: 90px;
     top: 0px;
-    width: 100vw;
+    width: 100%;
     letter-spacing: 0.2rem;
     align-items: center;
     justify-content: center;
@@ -189,18 +171,15 @@ h3 {
 }
 
 .user {
-    position: relative;
-    left: 20vw;
+    position: absolute;
+    right: 3%;
     top: 25px;
-    /* color: #000; */
     width: 150px;
     height: fit-content;
     text-align: center;
-    /* background-color: burlywood; */
     color: burlywood;
     border-radius: 1rem;
     padding: 0 5px 0 5px;
-    /* box-shadow: 0 0 10px 10px #000; */
     font-size: 1.1rem;
 }
 
@@ -219,36 +198,30 @@ h3 {
 #game-body {
     filter: blur(8px);
     width: 80vw;
-    height: 75vh;
+    min-height: 75vh;
     position: absolute;
-    top: max(13vh, 120px);
+    top: max(3vh, 80px);
     margin-left: 10%;
     background-color: #311307;
     border-radius: 2rem;
     box-shadow: 0 0 10px 10px #000 inset;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* animation: aid-board 0.5s linear 0s 1 forwards; */
-    /* animation-direction: reverse; */
+    justify-content: space-around;
     transition: all 0.5s ease-in-out;
+    padding: 50px;
+    box-sizing: border-box;
 }
 
 .game-ques {
-    position: absolute;
-    top: 20px;
-    left: 15%;
+    position: relative;
+    /* top: 20px; */
+    /* left: 15%; */
+    margin-top: -3%;
     text-align: center;
-    font-size: x-large;
-    width: 40vw;
+    font-size: 2.5rem;
+    align-self: center;
     color: #fff;
-}
-
-.game-hint img {
-    width: 150px;
-    position: absolute;
-    right: 0;
-    top: 100px;
 }
 
 .theme-selector {
@@ -268,29 +241,29 @@ h3 {
 }
 
 #letter-grab-area {
-    position: absolute;
-    top: 130px;
-    left: 10vw;
+    position: relative;
+    /* top: 130px; */
+    margin: 10px;
+    /* margin-left: 5%; */
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
     border: 2px solid #ffffff;
-    width: 500px;
-    margin: 10px;
-    min-height: 4.5rem;
+    width: 65%;
+    /* min-height: 4.5rem; */
     padding: 10px;
     font-family: "Source Code Pro", monospace;
 }
 
 #letter-drop-area {
-    position: absolute;
-    top: 300px;
-    left: 10vw;
-    width: 55vw;
+    position: relative;
+    /* top: 300px; */
+    margin: 5px;
+    /* margin-left: 5%; */
+    width: 65%;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin: 5px;
     font-family: "Source Code Pro", monospace;
 }
 
@@ -319,19 +292,16 @@ h3 {
 
 @keyframes view-tag {
     0% {
-        /* display: none; */
         opacity: 0;
         margin-right: 0px;
     }
     50% {
         opacity: 0.5;
         margin-right: 175px;
-        /* display: block; */
     }
     100% {
         opacity: 1;
         margin-right: 350px;
-        /* display: block; */
     }
 }
 
@@ -357,29 +327,67 @@ h3 {
     cursor: pointer;
     position: fixed;
     right: 0px;
-    top: 30vh;
+    top: 250px;
     background: burlywood;
     width: 25px;
     border-radius: 0.5rem;
     writing-mode: vertical-rl;
     text-orientation: upright;
     text-align: center;
-    animation: view-tag 0.5s linear 0s 1 reverse;
+    animation: view-tag 0.1s linear 0s 1 reverse;
     z-index: 10;
     border: 2px solid #000;
     transition: all 0.5s ease-in-out;
 }
 
+
+/* .lb-content::-webkit-scrollbar {
+    display: none;
+} */
+
+
+/* width */
+
+.lb-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+.lb-content::-webkit-scrollbar-track {
+    background: #311307;
+}
+
+
+/* Handle */
+
+.lb-content::-webkit-scrollbar-thumb {
+    background: #7a2e10;
+}
+
+
+/* Handle on hover */
+
+.lb-content::-webkit-scrollbar-thumb:hover {
+    background: burlywood;
+}
+
+.lb-content {
+    overflow-y: scroll;
+    height: 55vh;
+}
+
 .leaderboard {
     display: none;
     background-color: #fff;
-    height: 72vh;
+    height: 65vh;
     width: 350px;
     box-shadow: 0 0 10px 10px #000;
     border-radius: 1rem;
-    position: absolute;
+    position: fixed;
     right: 0px;
-    top: max(13vh, 120px);
+    top: 200px;
     transition: all 0.5s ease-in-out;
     padding: 1rem;
     background: #311307;
@@ -390,6 +398,12 @@ h3 {
     color: #fff;
     text-align: center;
     font-size: xx-large;
+}
+
+.find-me {
+    color: #fff;
+    font-size: 1.7rem;
+    margin-left: 2%;
 }
 
 .entry {
@@ -406,13 +420,13 @@ h3 {
     width: 20rem;
     height: 20rem;
     left: 50vw;
-    top: 50vh;
+    top: 40vh;
     margin-left: -10rem;
     margin-top: -10rem;
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0px;
+    padding: 0 0 30px 0;
     border-radius: 5px;
     background: #311307;
     align-items: center;
@@ -425,23 +439,37 @@ h3 {
     color: #311307;
     background-color: burlywood;
     border-radius: 10px;
-    transition: 0.5s;
+    transition: 0.3s ease-in-out;
     cursor: pointer;
 }
 
 #theme-popup p:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 5px #000;
+}
+
+#theme-popup button {
+    display: none;
 }
 
 #theme-popup button,
 #username-popup button {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
     color: yellow;
-    font-size: medium;
+    font-size: x-large;
     box-sizing: border-box;
     width: 100%;
     padding: 5px;
     border-top: 2px solid burlywood;
     background-image: url("../../assets/images/wood-texture-bg.jpg");
+}
+
+#theme-popup button:hover,
+#username-popup button:hover {
+    color: #0f0;
+    background: rgba(0, 0, 0, 0.6);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/images/wood-texture-bg.jpg");
 }
 
 #theme-popup header,
@@ -451,6 +479,7 @@ h3 {
     box-sizing: border-box;
     width: 100%;
     padding: 5px;
+    font-size: x-large;
     border-bottom: 2px solid burlywood;
     background-image: url("../../assets/images/wood-texture-bg.jpg");
 }
@@ -458,10 +487,10 @@ h3 {
 #username-popup {
     box-sizing: border-box;
     position: absolute;
-    width: 20rem;
+    width: 30rem;
     height: 15rem;
     left: 50vw;
-    top: 50vh;
+    top: 40vh;
     margin-left: -10rem;
     margin-top: -7.5rem;
     display: flex;
@@ -478,16 +507,18 @@ h3 {
 #username-popup input {
     background-color: burlywood;
     border-radius: 10px;
+    width: 300px;
+    font-size: large;
     padding: 5px;
     outline: none;
 }
 
 .buttons {
     display: flex;
-    position: absolute;
-    top: 500px;
-    left: 15vw;
-    width: 20vw;
+    position: relative;
+    align-self: flex-end;
+    width: 15vw;
+    /* margin-right: 12.5%; */
     justify-content: space-between;
 }
 
@@ -495,14 +526,32 @@ h3 {
     background-color: burlywood;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
 .navigation {
     display: flex;
-    position: absolute;
-    top: 70px;
-    left: 10vw;
+    align-items: center;
+    justify-content: space-around;
+    /* margin-left: 5%; */
+}
+
+.navig-bar {
+    display: flex;
+    position: relative;
+    /* top:60px; */
+    align-items: center;
+    justify-content: space-between;
+    /* width:100%; */
+}
+
+@media only screen and (max-width:700px) {
+    .navigation {
+        flex-wrap: wrap;
+    }
+    .navig-bar {
+        flex-wrap: wrap;
+    }
 }
 
 .navig-item {
@@ -516,21 +565,11 @@ h3 {
 }
 
 .timer {
-    position: absolute;
-    top: 75px;
-    right: 10vw;
     font-size: 1.5rem;
     color: white;
     transition: 1s ease-in-out;
     z-index: 3;
-}
-
-#time-label {
-    position: absolute;
-    top: 25px;
-    right: 10vw;
-    font-size: small;
-    color: white;
+    width: 15%;
 }
 
 .total-score {
@@ -543,6 +582,7 @@ h3 {
     left: calc(50vw - 18vw);
     flex-direction: column;
     width: 35vw;
+    height: 120px;
     z-index: 1;
 }
 
@@ -556,13 +596,71 @@ h3 {
 
 #hint {
     font-size: 3rem;
-    position: absolute;
-    top: 60px;
-    right: 18vw;
     cursor: help;
     filter: grayscale(100%);
 }
 
 #hint:hover {
     filter: grayscale(0%);
+}
+
+#error-message {
+    display: none;
+}
+
+
+/* .close {
+    cursor: pointer;
+    position: absolute;
+    background: #000;
+    width: 200px;
+    color: #aaa;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    bottom: 10px;
+    left: 30px;
+    box-shadow: 0px 0px 5px #000;
+    transition: all 0.2s ease-in-out;
+}
+
+.close:hover {
+    background: #f00;
+    color: #fff;
+    transform: scale(0.95);
+    box-shadow: none;
+} */
+
+.restart {
+    cursor: pointer;
+    position: absolute;
+    width: 200px;
+    bottom: 10px;
+    right: 12.5vw;
+    padding: 5px;
+    border-radius: 5px;
+    background: #000;
+    color: #aaa;
+    text-align: center;
+    box-shadow: 0px 0px 5px #000;
+    transition: all 0.2s ease-in-out;
+}
+
+.restart:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    transform: scale(0.95);
+    box-shadow: none;
+    background: rgb(6, 126, 6);
+}
+
+@media only screen and (max-width: 1280px) {
+    body>:not(#error-message) {
+        display: none;
+    }
+    #error-message {
+        display: block !important;
+        color: #fff;
+        text-align: center;
+    }
 }

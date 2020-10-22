@@ -43,12 +43,14 @@ const hideLeaderboard = () => {
 }
 
 const populateLeaderboard = async(theme) => {
-    lb.innerHTML = `<div id="lb-title">LEADER BOARD</div>`;
+    lb.innerHTML = `<div id="lb-title">LEADER BOARD</div><div class="lb-content"></div>`;
+    const lbContent = document.getElementsByClassName('lb-content')[0];
+    lbContent.innerHTML = "";
     const options = setFetchOptions(`{"theme": "${theme}" }`);
     let data = await fetch(`${baseURL}leaderboard`, options);
     data = await data.json();
     data.forEach((el, index) => {
-        lb.innerHTML += (new HighScores(el.name, el.score, index + 1)).getHTML();
+        lbContent.innerHTML += (new HighScores(el.name, el.score, index + 1)).getHTML();
     });
 };
 

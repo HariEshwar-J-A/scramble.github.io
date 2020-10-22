@@ -29,7 +29,7 @@ function getUserName() {
 menuOpenBtn.addEventListener("click", (e) => {
   if (menuOpenBtn.dataset.clicked === "clicked") {
     gameBody.style.filter = "blur(0px)";
-    menu.style.marginLeft = "-250px";
+    menu.style.marginLeft = "-265px";
     menuOpenBtn.style.marginLeft = "0px";
     menuOpenBtn.removeAttribute("data-clicked");
   } else {
@@ -41,15 +41,16 @@ menuOpenBtn.addEventListener("click", (e) => {
   }
 });
 
-menuOpenBtn.onmouseover = () => {
+menuOpenBtn.onmouseenter = () => {
   if (menuOpenBtn.dataset.clicked === "clicked") return;
-  menuOpenBtn.style.setProperty("animation", "menu-open-btn-jmp 1s");
-  menu.style.setProperty("animation", "menu-jmp 1s linear 0s forwards");
+  menuOpenBtn.style.marginLeft = "15px";
+  menu.style.marginLeft = "-235px";
 };
 
 menuOpenBtn.onmouseleave = () => {
-  menuOpenBtn.style.removeProperty("animation");
-  menu.style.removeProperty("animation");
+  if (menuOpenBtn.dataset.clicked === "clicked") return;
+  menuOpenBtn.style.marginLeft = "0px";
+  menu.style.marginLeft = "-265px";
 };
 
 //Defining onclick functions for each theme popup option
@@ -59,7 +60,7 @@ function themePopupEvents() {
       for (let i = 0; i < themes.length; i++) themes[i].style.color = "#311307";
       themes[i].style.color = "red";
       selectedTheme = { theme: themes[i].id };
-      themePopupCloseBtn.disabled = false;
+      themePopupCloseBtn.click();
     };
   }
 }
