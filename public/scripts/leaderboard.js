@@ -50,7 +50,11 @@ const populateLeaderboard = async(theme) => {
     let data = await fetch(`${baseURL}leaderboard`, options);
     data = await data.json();
     data.forEach((el, index) => {
-        lbContent.innerHTML += (new HighScores(el.name, el.score, index + 1)).getHTML();
+        if (index < 10) {
+            lbContent.innerHTML += (new HighScores(el.name, el.score, index + 1)).getHTML();
+        } else {
+            return
+        }
     });
 };
 

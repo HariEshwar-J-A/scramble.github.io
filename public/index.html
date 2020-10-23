@@ -4,23 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./public/styles/index.css" />
     <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Lemonada&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="../assets/images/scramble.svg" />
+    <link rel="shortcut icon" href="./assets/images/scramble.svg" />
     <title>Word scramble game</title>
 </head>
 
 <body>
     <div id="sidenav-open-btn">THEMES</div>
     <div id="sidenav">
-      <p id="menu-web-series">Web Series</p>
-      <p id="menu-fruits-and-vegetables">Fruits and vegetables</p>
-      <p id="menu-science">Science</p>
+        <header>SELECT THEME!</header>
+        <p id="menu-web-series">Web Series</p>
+        <p id="menu-fruits-and-vegetables">Fruits and vegetables</p>
+        <p id="menu-science">Science</p>
     </div>
 
     <div class="title">
+        <img id="logo" src="./assets/images/logo.png" alt="logo">
         <div id="game-name">
             <p class="box">W</p>
             <p class="box">o</p>
@@ -28,27 +30,31 @@
             <p class="box">d</p>
             -&nbsp;
             <h3>Scramble Game</h3>
-        </div>       
+        </div>
         <div class="user">Hi, Soliton</div>
+        <img id="user-icon" src="./assets/images/user.svg" alt="user icon">
     </div>
 
     <div id="game-body">
         <div class="game-ques">Web-Series</div>
         <div class="navig-bar">
-           <div class="navigation" id="navigation"></div>    
-           <div id="hint">💡</div>
-            <div class="timer" id="timer">:</div> 
+            <div class="navigation" id="navigation"></div>
+            <div id="hint">💡</div>
+            <div class="timer" id="timer">:</div>
         </div>
-        <div class="find-me">Find Me!!</div>        
+        <div class="find-me">
+            <p>Find Me!</p>
+            <span id="correct">&nbsp Correct ✔ &nbsp</span>
+            <span id="wrong">&nbsp Wrong &#10060 &nbsp</span>
+        </div>
         <div id="letter-grab-area" ondragover="onDragOver(event);" ondrop="onDropInContainer(event, this);"></div>
 
         <div id="letter-drop-area"></div>
         <div class="buttons">
-            <button id="check" title="click to evaluate the given entry">&#9745</button>
+            <button id="check" title="click to evaluate the given entry">CHECK</button>
             <button id="reset" title="click to reset the word">&#9850</button>
             <button id="next" title="click to move to next question">&#10152</button>
         </div>
-        
     </div>
 
     <div>
@@ -58,9 +64,11 @@
 
     <div id="theme-popup">
         <header>Select Theme:</header>
-        <p id="web-series">Web Series</p>
-        <p id="fruits-and-vegetables">Fruits and vegetables</p>
-        <p id="science">Science</p>
+        <div class="theme-popup-tiles">
+            <p id="web-series">Web Series</p>
+            <p id="fruits-and-vegetables">Fruits and vegetables</p>
+            <p id="science">Science</p>
+        </div>
         <button id="theme-submit-btn">OK</button>
     </div>
 
@@ -70,13 +78,15 @@
         <input type="text" id="username" placeholder="Username" pattern="^[a-zA-Z0-9 ]+$" required autocomplete="off" />
         <button type="submit" id="username-close-btn">OK</button>
     </form>
-    <div id="error-message"><h1>INCOMPATIBLE SCREEN RESOLUTION!</h1>Please use a compatible screen resolution of width greater than <h1>1280</h1> pixels</div>
-    <script defer src="./scripts/main.js" type="module"></script>
-    <script defer src="./scripts/theme_popup.js" type="module"></script>
-    <script defer src="./scripts/drag_drop.js" type="module"></script>
-    <script defer src="./scripts/leaderboard.js" type="module"></script>
-    <script defer src="./scripts/timer.js" type="module"></script>
-    <script defer src="./scripts/displayQues.js" type="module"></script>
+    <div id="error-message">
+        <h1>INCOMPATIBLE SCREEN RESOLUTION!</h1>Please use a compatible screen resolution of width greater than
+        <h1>1280</h1> pixels</div>
+    <script defer src="./public/scripts/main.js" type="module"></script>
+    <script defer src="./public/scripts/theme_popup.js" type="module"></script>
+    <script defer src="./public/scripts/drag_drop.js" type="module"></script>
+    <script defer src="./public/scripts/leaderboard.js" type="module"></script>
+    <script defer src="./public/scripts/timer.js" type="module"></script>
+    <script defer src="./public/scripts/displayQues.js" type="module"></script>
 </body>
 
 </html>

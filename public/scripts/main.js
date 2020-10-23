@@ -5,7 +5,8 @@ import {
     displayQues,
     showQuestion,
     resetNavig,
-    checkFunction
+    checkFunction,
+    setValuatedFlag
 } from "./displayQues.js";
 
 import { getQstns, themeSelection } from "./theme_popup.js";
@@ -52,7 +53,11 @@ let check = document.getElementById("check");
 let currQues = 0;
 //navigation buttons
 let navigItems = document.querySelectorAll(".navig-item");
-navigItems[0].style.border = "2px solid white";
+navigItems.forEach(i => {
+    i.style.boxShadow = "0 0 5px 7px #000";
+})
+navigItems[0].style.boxShadow = "none";
+
 navigItems.forEach((i, index) => {
     i.addEventListener("click", () => {
         qstn = allQues[index].ques.toUpperCase();
@@ -60,12 +65,23 @@ navigItems.forEach((i, index) => {
         document.getElementById("hint").title = allQues[index].hint;
         qaAfterDrop(currQues);
         currQues = index;
+        //clear nav items border
         navigItems.forEach((i) => {
-            i.style.border = "none";
+            // i.style.border = "none";
+            i.style.boxShadow = "0 0 5px 7px #000";
         });
-        i.style.border = "2px solid white";
-        if (index === navigItems.length - 1) next.innerText = "🏁";
-        else next.innerHTML = "&#10140";
+        //clear the question eval block
+        document.getElementById('correct').style.display = "none";
+        document.getElementById('wrong').style.display = "none";
+        i.style.boxShadow = "none";
+        if (index === navigItems.length - 1) {
+          next.innerText = "🏁";
+          next.title="Click to finish and view the score";
+        }
+        else{
+          next.innerHTML = "&#10140";
+          next.title="click to move to next question";
+        } 
         showQuestion(
             themeAfterDrop[currQues].ques,
             themeAfterDrop[currQues].ans,
@@ -142,6 +158,7 @@ async function getData() {
     score = 0;
     stopTimer();
     startTimer();
+    setValuatedFlag(allQues.length);
 }
 
 //Defining onclick functions for menu options

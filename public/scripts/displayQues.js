@@ -8,16 +8,24 @@ let letterGrabArea = document.getElementById("letter-grab-area");
 export let totalScore = 0;
 export let completedFlag = false;
 //to check if a question is already evaluated
-let valuatedFlag = new Array(6).fill(0);
+var valuatedFlag = new Array(6).fill(0);
+
+export function setValuatedFlag(length) {
+    valuatedFlag = new Array(length).fill(0);
+}
+
 export function displayQues(currQues, ans, time, qstn, score, allQues, themeAfterDrop) {
     let navigItems = document.querySelectorAll(".navig-item");
     let ansBox = document.querySelectorAll(".drop-letter");
     let next = document.getElementById("next");
     let ansString = "";
     let hint = document.getElementById("hint");
+    //clear the question eval block
+    document.getElementById('correct').style.display = "none";
+    document.getElementById('wrong').style.display = "none";
     //clear nav items border
     navigItems.forEach((i) => {
-        i.style.border = "none";
+        i.style.boxShadow = "0 0 5px 7px #000";
     });
     //gathers answer string together
     ansBox.forEach((i) => {
@@ -26,11 +34,12 @@ export function displayQues(currQues, ans, time, qstn, score, allQues, themeAfte
 
     if (currQues === navigItems.length - 1) {
         next.innerText = "🏁";
+        next.title="Click to finish and view the score";
     }
     if (ansString === ans) {
         //only if current question is already not validated
+        navigItems[currQues - 1].style.backgroundColor = "green";
         if (valuatedFlag[currQues - 1] === 0) {
-            navigItems[currQues - 1].style.backgroundColor = "green";
             score += 10;
             totalScore += 10;
             valuatedFlag[currQues - 1] = 1;
@@ -52,7 +61,7 @@ export function displayQues(currQues, ans, time, qstn, score, allQues, themeAfte
     if (currQues === navigItems.length) {
         displayScore(score, time);
     } else {
-        navigItems[currQues].style.border = "2px solid white";
+        navigItems[currQues].style.boxShadow = "none";
     }
     return [ans, score];
 }
@@ -63,17 +72,23 @@ export function checkFunction(ans, currQues, score) {
     let navigItems = document.querySelectorAll(".navig-item");
     let ansString = "";
     //gathers answer string together
+    let correct = document.getElementById('correct');
+    let wrong = document.getElementById('wrong');
     ansBox.forEach((i) => {
         ansString += i.innerText.trim();
     });
     if (ansString === ans) {
+        correct.style.display = "block";
+        wrong.style.display = "none";
+        navigItems[currQues].style.backgroundColor = "green";
         if (valuatedFlag[currQues] === 0) {
-            navigItems[currQues].style.backgroundColor = "green";
             score += 10;
             totalScore += 10;
             valuatedFlag[currQues] = 1;
         }
     } else if (ansString !== ans && currQues <= navigItems.length) {
+        wrong.style.display = "block";
+        correct.style.display = "none";
         navigItems[currQues].style.backgroundColor = "red";
     }
     return score;
@@ -90,9 +105,10 @@ export function resetNavig() {
     } catch (err) {}
     let next = document.getElementById("next");
     next.innerHTML = "&#10140";
+    next.title="click to move to next question";
     let navigItems = document.querySelectorAll(".navig-item");
     navigItems.forEach((i) => {
-        i.style.backgroundColor = "rgba(128, 128, 128, 0.685)";
+        i.style.backgroundColor = "burlywood";
     });
 }
 
@@ -112,7 +128,7 @@ export async function displayScore(score, time) {
     body.appendChild(scoreDiv);
     console.log("Your total score is : " + score);
     document.getElementById("game-body").style.filter = "blur(8px)";
-    valuatedFlag = new Array(6).fill(0);
+    // valuatedFlag = new Array(6).fill(0);
     document.getElementsByClassName("lb-tag")[0].click();
     finalAction();
 }
@@ -121,7 +137,8 @@ export function finalAction() {
     console.log('final-action');
     const restart = document.getElementsByClassName('restart')[0];
     restart.addEventListener('click', (e) => {
-        location.reload();
+        document.getElementById("theme-popup").style.display = 'flex';
+        document.getElementsByClassName('total-score')[0].remove();
     });
 }
 

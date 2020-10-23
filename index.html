@@ -15,12 +15,14 @@
 <body>
     <div id="sidenav-open-btn">THEMES</div>
     <div id="sidenav">
+        <header>SELECT THEME!</header>
         <p id="menu-web-series">Web Series</p>
         <p id="menu-fruits-and-vegetables">Fruits and vegetables</p>
         <p id="menu-science">Science</p>
     </div>
 
     <div class="title">
+        <img id="logo" src="../assets/images/logo.png" alt="logo">
         <div id="game-name">
             <p class="box">W</p>
             <p class="box">o</p>
@@ -29,7 +31,10 @@
             -&nbsp;
             <h3>Scramble Game</h3>
         </div>
-        <div class="user">Hi, Soliton</div>
+        <div style="display: flex; margin-right: 20px;">
+            <div class="user">Hi, Soliton</div>
+            <img id="user-icon" src="../assets/images/user.svg" alt="user icon">
+        </div>
     </div>
 
     <div id="game-body">
@@ -39,16 +44,19 @@
             <div id="hint">💡</div>
             <div class="timer" id="timer">:</div>
         </div>
-        <div class="find-me">Find Me!!</div>
+        <div class="find-me">
+            <p>Unscramble Me!</p>
+            <span id="correct">&nbsp Correct ✔ &nbsp</span>
+            <span id="wrong">&nbsp Wrong &#10060 &nbsp</span>
+        </div>
         <div id="letter-grab-area" ondragover="onDragOver(event);" ondrop="onDropInContainer(event, this);"></div>
 
         <div id="letter-drop-area"></div>
         <div class="buttons">
-            <button id="check" title="click to evaluate the given entry">&#9745</button>
+            <button id="check" title="click to evaluate the given entry">CHECK</button>
             <button id="reset" title="click to reset the word">&#9850</button>
             <button id="next" title="click to move to next question">&#10152</button>
         </div>
-
     </div>
 
     <div>
@@ -58,18 +66,23 @@
 
     <div id="theme-popup">
         <header>Select Theme:</header>
-        <p id="web-series">Web Series</p>
-        <p id="fruits-and-vegetables">Fruits and vegetables</p>
-        <p id="science">Science</p>
+        <div class="theme-popup-tiles">
+            <p id="web-series">Web Series</p>
+            <p id="fruits-and-vegetables">Fruits and vegetables</p>
+            <p id="science">Science</p>
+        </div>
         <button id="theme-submit-btn">OK</button>
     </div>
 
     <form id="username-popup">
-        <header>Tell us your name😄</header>
+        <header>Tell us your nickname😄</header>
 
         <input type="text" id="username" placeholder="Username" pattern="^[a-zA-Z0-9 ]+$" required autocomplete="off" />
         <button type="submit" id="username-close-btn">OK</button>
     </form>
+    <div id="error-message">
+        <h1>INCOMPATIBLE SCREEN RESOLUTION!</h1>Please use a compatible screen resolution of width greater than
+        <h1>1280</h1> pixels</div>
     <script defer src="./public/scripts/main.js" type="module"></script>
     <script defer src="./public/scripts/theme_popup.js" type="module"></script>
     <script defer src="./public/scripts/drag_drop.js" type="module"></script>
@@ -77,5 +90,6 @@
     <script defer src="./public/scripts/timer.js" type="module"></script>
     <script defer src="./public/scripts/displayQues.js" type="module"></script>
 </body>
+<footer>&copy; This is work of ABI akka-வின் விழுதுகள்</footer>
 
 </html>
