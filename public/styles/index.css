@@ -719,8 +719,11 @@ h3 {
 }
 
 footer {
-    height: 60px;
+    height: 40px;
     width: 100vw;
     background: #000000;
     color: #fff;
+    position: fixed;
+    text-align: center;
+    bottom: 0px;
 }
