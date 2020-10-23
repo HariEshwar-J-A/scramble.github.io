@@ -717,3 +717,8 @@ h3 {
         text-align: center;
     }
 }
+
+footer {
+    background: #000000;
+    color: #fff;
+}
