@@ -75,13 +75,12 @@ navigItems.forEach((i, index) => {
         document.getElementById('wrong').style.display = "none";
         i.style.boxShadow = "none";
         if (index === navigItems.length - 1) {
-          next.innerText = "🏁";
-          next.title="Click to finish and view the score";
+            next.innerText = "🏁";
+            next.title = "Click to finish and view the score";
+        } else {
+            next.innerHTML = "&#10140";
+            next.title = "click to move to next question";
         }
-        else{
-          next.innerHTML = "&#10140";
-          next.title="click to move to next question";
-        } 
         showQuestion(
             themeAfterDrop[currQues].ques,
             themeAfterDrop[currQues].ans,
@@ -145,7 +144,6 @@ async function getData() {
     themeAfterDrop = allQues.map((e) => {
         return { ques: e.ques.toUpperCase(), ans: "" };
     });
-
     setThemeQuestion(theme);
     viewLeaderboard();
     resetNavig();

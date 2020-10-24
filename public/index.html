@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./public/styles/index.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
     <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Lemonada&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./assets/images/scramble.svg" />
+    <link rel="shortcut icon" href="../assets/images/scramble.svg" />
     <title>Word scramble game</title>
 </head>
 
@@ -22,7 +22,7 @@
     </div>
 
     <div class="title">
-        <img id="logo" src="./assets/images/logo.png" alt="logo">
+        <img id="logo" src="../assets/images/logo.png" alt="logo">
         <div id="game-name">
             <p class="box">W</p>
             <p class="box">o</p>
@@ -31,8 +31,10 @@
             -&nbsp;
             <h3>Scramble Game</h3>
         </div>
-        <div class="user">Hi, Soliton</div>
-        <img id="user-icon" src="./assets/images/user.svg" alt="user icon">
+        <div style="display: flex; margin-right: 20px;">
+            <div class="user">Hi, Soliton</div>
+            <img id="user-icon" src="../assets/images/user.svg" alt="user icon">
+        </div>
     </div>
 
     <div id="game-body">
@@ -43,7 +45,7 @@
             <div class="timer" id="timer">:</div>
         </div>
         <div class="find-me">
-            <p>Find Me!</p>
+            <p>Unscramble Me!</p>
             <span id="correct">&nbsp Correct ✔ &nbsp</span>
             <span id="wrong">&nbsp Wrong &#10060 &nbsp</span>
         </div>
@@ -73,7 +75,7 @@
     </div>
 
     <form id="username-popup">
-        <header>Tell us your name😄</header>
+        <header>Tell us your nickname😄</header>
 
         <input type="text" id="username" placeholder="Username" pattern="^[a-zA-Z0-9 ]+$" required autocomplete="off" />
         <button type="submit" id="username-close-btn">OK</button>
@@ -81,12 +83,13 @@
     <div id="error-message">
         <h1>INCOMPATIBLE SCREEN RESOLUTION!</h1>Please use a compatible screen resolution of width greater than
         <h1>1280</h1> pixels</div>
-    <script defer src="./public/scripts/main.js" type="module"></script>
-    <script defer src="./public/scripts/theme_popup.js" type="module"></script>
-    <script defer src="./public/scripts/drag_drop.js" type="module"></script>
-    <script defer src="./public/scripts/leaderboard.js" type="module"></script>
-    <script defer src="./public/scripts/timer.js" type="module"></script>
-    <script defer src="./public/scripts/displayQues.js" type="module"></script>
+    <footer>&copy; work of SHEMS-WebTIPS 2020-SOLITONS</footer>
+    <script defer src="./scripts/main.js" type="module"></script>
+    <script defer src="./scripts/theme_popup.js" type="module"></script>
+    <script defer src="./scripts/drag_drop.js" type="module"></script>
+    <script defer src="./scripts/leaderboard.js" type="module"></script>
+    <script defer src="./scripts/timer.js" type="module"></script>
+    <script defer src="./scripts/displayQues.js" type="module"></script>
 </body>
 
 </html>

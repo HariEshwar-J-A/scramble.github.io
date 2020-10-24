@@ -707,6 +707,16 @@ h3 {
     color: red;
 }
 
+footer {
+    position: fixed;
+    height: 30px;
+    width: 100vw;
+    background: #311307;
+    color: #fff;
+    text-align: center;
+    bottom: 0px;
+}
+
 @media only screen and (max-width: 1280px) {
     body> :not(#error-message) {
         display: none;
@@ -716,14 +726,4 @@ h3 {
         color: #fff;
         text-align: center;
     }
-}
-
-footer {
-    height: 40px;
-    width: 100vw;
-    background: #000000;
-    color: #fff;
-    position: fixed;
-    text-align: center;
-    bottom: 0px;
 }

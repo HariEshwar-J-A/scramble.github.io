@@ -9,6 +9,9 @@ export let totalScore = 0;
 export let completedFlag = false;
 //to check if a question is already evaluated
 var valuatedFlag = new Array(6).fill(0);
+const gameBody = document.getElementById("game-body");
+const lbTag = document.getElementsByClassName("lb-tag")[0];
+const menuOpen = document.getElementById("sidenav-open-btn");
 
 export function setValuatedFlag(length) {
     valuatedFlag = new Array(length).fill(0);
@@ -34,7 +37,7 @@ export function displayQues(currQues, ans, time, qstn, score, allQues, themeAfte
 
     if (currQues === navigItems.length - 1) {
         next.innerText = "🏁";
-        next.title="Click to finish and view the score";
+        next.title = "Click to finish and view the score";
     }
     if (ansString === ans) {
         //only if current question is already not validated
@@ -105,7 +108,7 @@ export function resetNavig() {
     } catch (err) {}
     let next = document.getElementById("next");
     next.innerHTML = "&#10140";
-    next.title="click to move to next question";
+    next.title = "click to move to next question";
     let navigItems = document.querySelectorAll(".navig-item");
     navigItems.forEach((i) => {
         i.style.backgroundColor = "burlywood";
@@ -127,9 +130,14 @@ export async function displayScore(score, time) {
     scoreDiv.innerHTML = `<h1>You scored :${score} points</h1><div class="restart">PLAY AGAIN</div<br>`;
     body.appendChild(scoreDiv);
     console.log("Your total score is : " + score);
-    document.getElementById("game-body").style.filter = "blur(8px)";
+    gameBody.style.filter = "blur(8px)";
     // valuatedFlag = new Array(6).fill(0);
-    document.getElementsByClassName("lb-tag")[0].click();
+    if (lbTag.id === 'clicked') {
+        lbTag.click();
+        lbTag.click();
+    } else {
+        lbTag.click();
+    }
     finalAction();
 }
 
@@ -139,6 +147,13 @@ export function finalAction() {
     restart.addEventListener('click', (e) => {
         document.getElementById("theme-popup").style.display = 'flex';
         document.getElementsByClassName('total-score')[0].remove();
+        if (menuOpen.style.marginLeft === '250px') {
+            menuOpen.click();
+            gameBody.style.filter = "blur(8px)";
+        }
+        if (lbTag.id === 'clicked') {
+            lbTag.click();
+        }
     });
 }
 
