@@ -148,6 +148,11 @@ async function getData() {
     viewLeaderboard();
     resetNavig();
     currQues = 0;
+    //To display the 1st question selected
+    navigItems.forEach(i => {
+        i.style.boxShadow = "0 0 5px 7px #000";
+    })
+    navigItems[0].style.boxShadow = "none";
     qstn = allQues[0].ques.toUpperCase();
     ans = allQues[0].ans.toUpperCase();
     populateDropArea(letterDropArea, themeAfterDrop[0].ans, qstn);
